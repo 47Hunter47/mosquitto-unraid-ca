@@ -10,11 +10,12 @@
   <Support>https://github.com/47Hunter47/mosquitto-unraid-ca/issues</Support>
   <Project>https://mosquitto.org/</Project>
   <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.svg</Icon>
-  <Overview>Eclipse Mosquitto 2.x MQTT broker. Maintained alternative to spants/mqtt (1.x, unmaintained since 2020). MQTT protocol 5, host networking, config at /config.</Overview>
+  <Overview>Official Eclipse Mosquitto 2.x image (continuously updated, last push 2026-06) with a minimal Unraid template: host networking and a single /config folder. Unlike cmccambridge/mosquitto-unraid (custom image frozen at 2.0.20 since 2024-11) or spants/mqtt (Mosquitto 1.x, unmaintained since 2020), this template always tracks the official upstream image. MQTT protocol 5, standard /config layout.</Overview>
   <Description>Official Eclipse Mosquitto 2.x image, pre-configured for Unraid.
 
 Why this template:
 - spants/mqtt is based on Mosquitto 1.x and has not been updated since 2020. Mosquitto 2.x writes a newer persistent database format (v6) that 1.x cannot read, so upgraded data folders break the old template.
+- cmccambridge/mosquitto-unraid is a custom image that has not been rebuilt since 2024-11 (frozen at Mosquitto 2.0.20). This template uses the official eclipse-mosquitto image, which is continuously updated upstream.
 - Modern Home Assistant requires MQTT protocol 5, which Mosquitto 2.x supports.
 
 Configuration:

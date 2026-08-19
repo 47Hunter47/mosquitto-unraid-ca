@@ -9,6 +9,8 @@ The existing `spants/mqtt` Community App is based on Mosquitto **1.x** and has n
 - Mosquitto 2.x writes persistent database format **v6**; the 1.x image cannot read it (`Unsupported persistent database format version 6 (need version 3)`), so existing data folders break the old template.
 - Modern Home Assistant requires **MQTT protocol 5**, which 1.x does not support.
 
+`cmccambridge/mosquitto-unraid` is more recent but ships a **custom image** that has not been rebuilt since 2024-11 (frozen at Mosquitto 2.0.20). This template uses the **official `eclipse-mosquitto` image**, which is continuously updated upstream, with a minimal Unraid layout on top: host networking and a single `/config` folder.
+
 This template runs the official 2.x image with a standard `/config` layout and host networking.
 
 ## Setup

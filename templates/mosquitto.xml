@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/47Hunter47/mosquitto-unraid-ca/issues</Support>
   <Project>https://mosquitto.org/</Project>
-  <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.png</Icon>
   <Overview>Official Eclipse Mosquitto 2.x image (continuously updated, last push 2026-06) with a minimal Unraid template: host networking and a single /config folder. Unlike cmccambridge/mosquitto-unraid (custom image frozen at 2.0.20 since 2024-11) or spants/mqtt (Mosquitto 1.x, unmaintained since 2020), this template always tracks the official upstream image. MQTT protocol 5, standard /config layout.</Overview>
   <Description>Official Eclipse Mosquitto 2.x image, pre-configured for Unraid.
 

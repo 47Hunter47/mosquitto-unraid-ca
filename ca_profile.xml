@@ -3,6 +3,6 @@
   <Profile>
     Maintainer repository for the Mosquitto (Eclipse Mosquitto 2.x) MQTT broker Docker template for Unraid. Uses the official, continuously updated eclipse-mosquitto image with a minimal Unraid layout (host networking, single /config folder) — unlike spants/mqtt (Mosquitto 1.x, unmaintained since 2020) or cmccambridge/mosquitto-unraid (custom image frozen at 2.0.20 since 2024-11). Supports MQTT protocol 5 (required by modern Home Assistant).
   </Profile>
-  <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.png</Icon>
   <WebPage>https://github.com/47Hunter47/mosquitto-unraid-ca</WebPage>
 </CommunityApplications>

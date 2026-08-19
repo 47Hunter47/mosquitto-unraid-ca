@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Mosquitto</Name>
+  <Repository>eclipse-mosquitto:2</Repository>
+  <Registry>https://hub.docker.com/r/library/eclipse-mosquitto</Registry>
+  <Network>host</Network>
+  <MyIP></MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/47Hunter47/mosquitto-unraid-ca/issues</Support>
+  <Project>https://mosquitto.org/</Project>
+  <Icon>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/icon.svg</Icon>
+  <Overview>Eclipse Mosquitto 2.x MQTT broker. Maintained alternative to spants/mqtt (1.x, unmaintained since 2020). MQTT protocol 5, host networking, config at /config.</Overview>
+  <Description>Official Eclipse Mosquitto 2.x image, pre-configured for Unraid.
+
+Why this template:
+- spants/mqtt is based on Mosquitto 1.x and has not been updated since 2020. Mosquitto 2.x writes a newer persistent database format (v6) that 1.x cannot read, so upgraded data folders break the old template.
+- Modern Home Assistant requires MQTT protocol 5, which Mosquitto 2.x supports.
+
+Configuration:
+- mosquitto.conf, passwords.mqtt and data/ live in /config (host: /mnt/user/appdata/Mosquitto by default).
+- Create users with: mosquitto_passwd -c -b /config/passwords.mqtt &lt;user&gt; &lt;password&gt;
+- Enable auth in mosquitto.conf: allow_anonymous false + password_file /config/passwords.mqtt
+- Host networking: broker listens on 1883 by default (set listener in mosquitto.conf).</Description>
+  <Category>HomeAutomation:MQTT</Category>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/47Hunter47/mosquitto-unraid-ca/main/templates/mosquitto.xml</TemplateURL>
+  <ExtraParams></ExtraParams>
+  <PostArgs>/usr/sbin/mosquitto -c /config/mosquitto.conf</PostArgs>
+  <CPUset></CPUset>
+  <Networking>
+    <Mode>host</Mode>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Mosquitto</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Europe/Istanbul</Value>
+      <Name>TZ</Name>
+    </Variable>
+  </Environment>
+  <Config Name="Config Directory" Target="/config" Default="/mnt/user/appdata/Mosquitto" Mode="rw" Description="Host Directory: mosquitto.conf, passwords.mqtt, data/">/mnt/user/appdata/Mosquitto</Config>
+</Container>
